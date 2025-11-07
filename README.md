@@ -71,7 +71,7 @@ Library Type: Shared (libcc_advanced_process.so)
 Message Range: 30–40 and 50–60 (inclusive).
 
 Implementation:
-- Identical in structure to SimpleProcess, but implements its own message ranges: 10–20 and 30–40 (inclusive).
+- Identical in structure to SimpleProcess, but implements its own message ranges.
 
 # 6. Dispatcher Library (dispatcher)
 Library Type: Shared (libcc_dispatcher.so)
