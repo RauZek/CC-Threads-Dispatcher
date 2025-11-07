@@ -7,7 +7,7 @@
 # 1. Project Overview
 This project implements a modular, object-oriented, threaded message dispatching system in C++. It consists of:
 
-- A static library (base_thread) providing an abstract base class for threading, using RAII for lifecycle management.
+- A static library (base_thread) providing an abstract base class for threading, using RAII for the program's resources lifecycle management.
 
 - Two shared libraries (simple_process, advanced_process) that implement the base class to provide concrete message handling.
 
@@ -18,7 +18,7 @@ This project implements a modular, object-oriented, threaded message dispatching
 The solution uses C++ inheritance, virtual functions, and RAII to ensure separation of concerns and a clean, safe shutdown.
 
 # 2. Workspace Layout
-The project uses a clean, multi-directory CMake layout.
+The project uses a clean, multi-directory CMake layout:
 
 cc_threads/
 - test.sh
@@ -37,7 +37,7 @@ Responsibilities:
 - Provides a generic, object-oriented, thread-safe message-passing framework.
 
 Implementation:
-- IBaseThread (Interface): A virtual interface defining the public POV with the user: using SendMsg() and GetSupportedMsg().
+- IBaseThread (Interface): A virtual interface defining the public POV for the user: using SendMsg() and GetSupportedMsg().
 
 - BaseThread (Abstract Class): Implements the IBaseThread interface.
 
