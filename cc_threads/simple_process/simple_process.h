@@ -10,21 +10,21 @@
 namespace cc_threads {
 
 class SimpleProcess : public BaseThread {
- public:
-  SimpleProcess();
-  ~SimpleProcess() override = default;
+   public:
+    SimpleProcess();
+    ~SimpleProcess() override = default;
 
-  SimpleProcess(const SimpleProcess&) = delete;
-  SimpleProcess& operator=(const SimpleProcess&) = delete;
+    SimpleProcess(const SimpleProcess&) = delete;
+    SimpleProcess& operator=(const SimpleProcess&) = delete;
 
- protected:
-  void Process(uint32_t id) override;
+   protected:
+    void Process(uint32_t id) override;
 };
 
 extern "C" IBaseThread* Create() {
-  return new SimpleProcess();
-}
+     return new SimpleProcess();
+    }
 
-}  // namespace cc_threads
+} // namespace cc_threads
 
-#endif  // __SIMPLE_PROCESS_H__
+#endif // __SIMPLE_PROCESS_H__

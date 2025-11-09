@@ -72,7 +72,7 @@ function cc_threads-test () {
     (
         LD_LIBRARY_PATH="${PROJECT_ROOT}/install/usr/lib" \
 
-        "${PROJECT_ROOT}/install/usr/bin/cc_threads_cmake" "$@"
+        "${PROJECT_ROOT}/install/usr/bin/app" "$@"
     )
 }
 

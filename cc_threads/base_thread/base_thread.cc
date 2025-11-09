@@ -4,7 +4,7 @@
 
 namespace cc_threads {
 
-BaseThread::BaseThread() { thread_ = std::thread(&BaseThread::Loop, this); }
+BaseThread::BaseThread() {}
 
 BaseThread::~BaseThread() {
     if (!stop_thread_.load()) {
@@ -23,9 +23,7 @@ void BaseThread::SendMsg(uint32_t id) {
     msg_queue_.Push(id);
 }
 
-const std::vector<uint32_t>& BaseThread::GetSupportedMsg() {
-    return supported_msgs_;
-}
+std::vector<uint32_t>& BaseThread::GetSupportedMsg() { return supported_msgs_; }
 
 void BaseThread::Loop() {
     while (true) {
@@ -33,11 +31,19 @@ void BaseThread::Loop() {
 
         if (msg == 0) {
             std::cout << "[Thread " << std::this_thread::get_id()
-                      << "] Received stop message. Exiting loop." << std::endl;
+                      << "] Received the stop message. Exiting the loop..."
+                      << std::endl;
             break;
         }
 
         Process(msg);
+    }
+}
+
+void BaseThread::StartThread() {
+    // Only start if not already running
+    if (!thread_.joinable()) {
+        thread_ = std::thread(&BaseThread::Loop, this);
     }
 }
 

@@ -10,20 +10,18 @@
 namespace cc_threads {
 
 class AdvancedProcess : public BaseThread {
- public:
-  AdvancedProcess();
-  ~AdvancedProcess() override = default;
+   public:
+    AdvancedProcess();
+    ~AdvancedProcess() override = default;
 
-  AdvancedProcess(const AdvancedProcess&) = delete;
-  AdvancedProcess& operator=(const AdvancedProcess&) = delete;
+    AdvancedProcess(const AdvancedProcess&) = delete;
+    AdvancedProcess& operator=(const AdvancedProcess&) = delete;
 
- protected:
-  void Process(uint32_t id) override;
+   protected:
+    void Process(uint32_t id) override;
 };
 
-extern "C" IBaseThread* Create() {
-  return new AdvancedProcess();
-}
+extern "C" IBaseThread* Create() { return new AdvancedProcess(); }
 
 }  // namespace cc_threads
 

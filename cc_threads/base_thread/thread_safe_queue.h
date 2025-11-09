@@ -4,7 +4,6 @@
 #include <condition_variable>
 #include <mutex>
 #include <queue>
-#include <utility>
 
 namespace cc_threads {
 namespace utils {
@@ -40,7 +39,7 @@ class ThreadSafeQueue {
     std::condition_variable condition_;
 };
 
-}  // namespace utils
-}  // namespace cc_threads
+} // namespace utils
+} // namespace cc_threads
 
-#endif  // __THREAD_SAFE_QUEUE_H__
+#endif // __THREAD_SAFE_QUEUE_H__

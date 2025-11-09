@@ -4,10 +4,9 @@ add_library(dispatcher SHARED
 
 target_include_directories(dispatcher PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_PROJECT_SOURCE_DIR}/includes
 )
 
-target_link_libraries(dispatcher PRIVATE
+target_link_libraries(dispatcher PUBLIC
     base_thread
     Threads::Threads
     dl
@@ -16,3 +15,5 @@ target_link_libraries(dispatcher PRIVATE
 install(TARGETS dispatcher
     LIBRARY DESTINATION lib
 )
+
+set_target_properties(dispatcher PROPERTIES OUTPUT_NAME "dispatcher")

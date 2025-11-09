@@ -33,6 +33,6 @@ class Dispatcher : public BaseThread {
     std::map<uint32_t, std::vector<IBaseThread*>> msg_routing_table_;
 };
 
-}  // namespace cc_threads
+} // namespace cc_threads
 
-#endif  // __DISPATCHER_H__
+#endif // __DISPATCHER_H__

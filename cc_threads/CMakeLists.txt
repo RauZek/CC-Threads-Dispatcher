@@ -11,6 +11,9 @@ add_compile_options(-Wall -Werror -Wextra -Wpedantic -Wno-non-virtual-dtor)
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+set(CMAKE_INSTALL_RPATH "$ORIGIN")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 add_subdirectory(base_thread)
 add_subdirectory(simple_process)
 add_subdirectory(advanced_process)

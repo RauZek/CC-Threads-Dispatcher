@@ -12,6 +12,7 @@ AdvancedProcess::AdvancedProcess() : BaseThread() {
     for (uint32_t i = 50; i <= 60; ++i) {
         supported_msgs_.push_back(i);
     }
+    StartThread();
 }
 
 void AdvancedProcess::Process(uint32_t id) {

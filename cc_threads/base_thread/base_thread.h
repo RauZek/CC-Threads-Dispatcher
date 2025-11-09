@@ -22,10 +22,12 @@ class BaseThread : public IBaseThread {
     BaseThread& operator=(BaseThread&&) = delete;
 
     void SendMsg(uint32_t id) override;
-    const std::vector<uint32_t>& GetSupportedMsg() override;
+    std::vector<uint32_t>& GetSupportedMsg() override;
 
    protected:
     virtual void Process(uint32_t id) = 0;
+
+    void StartThread();
     std::vector<uint32_t> supported_msgs_;
 
    private:
