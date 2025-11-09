@@ -132,5 +132,4 @@ A shell script (test.sh) is implemented to stress-test the application. It runs 
 
 # 10. CMake Setup
 The root CMakeLists.txt encapsulates the build using add_subdirectory() for each component.
-
 Modern CMake is used (target_link_libraries, target_include_directories) to manage dependencies.
