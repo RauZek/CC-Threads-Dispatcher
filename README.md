@@ -8,7 +8,7 @@
 The project implements a modular, object-oriented threaded message dispatching system in C++.
 It consists of:
 
-- A static library (base_thread) providing an abstract base class for threading, using RAII for lifecycle management.
+- A static library (base_thread) providing an abstract base class for threading, using RAII for the program's resources lifecycle management.
 
 - Two shared libraries (simple_process, advanced_process) that implement the base class to provide concrete message handling.
 
@@ -19,7 +19,7 @@ It consists of:
 The solution uses C++ inheritance, virtual functions, and RAII to ensure separation of concerns and a clean, safe shutdown.
 
 # 2. Workspace Layout
-The project uses a clean, multi-directory CMake layout.
+The project uses a clean, multi-directory CMake layout:
 
 cc_threads/
 - test.sh
@@ -38,7 +38,7 @@ Responsibilities:
 - Provides a generic, object-oriented, thread-safe message-passing framework.
 
 Implementation:
-- IBaseThread (Interface): A virtual interface defining the public POV with the user: using SendMsg() and GetSupportedMsg().
+- IBaseThread (Interface): A virtual interface defining the public POV for the user: using SendMsg() and GetSupportedMsg().
 
 - BaseThread (Abstract Class): Implements the IBaseThread interface.
 
@@ -72,7 +72,7 @@ Library Type: Shared (lib_advanced_process.so)
 Message Range: 30–40 and 50–60 (inclusive).
 
 Implementation:
-- Identical in structure to SimpleProcess, but implements its own message ranges: 10–20 and 30–40 (inclusive).
+- Identical in structure to SimpleProcess, but implements its own message ranges.
 
 # 6. Dispatcher Library (dispatcher)
 Library Type: Shared (lib_dispatcher.so)
